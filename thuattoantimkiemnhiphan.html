@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let num =[];
+    for (let i=0;i<100;i++){
+        num[i] = i+1;
+    }
+    console.log(num);
+    function check(arr,num){
+        let count= 0;
+        for (let i = 0; i< arr.length;i++){
+            count++;
+            if(arr[i] === num){
+                return count;
+            }
+        }
+        return -1;
+    }
+    function binaryCheck(arr,num){
+        let count = 0;
+        let min = 0;
+        let max = arr.length-1;
+        let mid = 0;
+        while (min<=max){
+            mid = Math.floor((min+max)/2);
+            if (arr[mid]==num){
+                count++;
+                return count;
+            }else if(arr[mid]<num){
+                count++;
+                min = mid+1;
+            }else{
+                count++;
+                max = mid-1;
+            }
+        }
+        return -1;
+    }
+    console.log(check(num,80));
+    console.log(binaryCheck(num,80));
+
+
+</script>
+</html>

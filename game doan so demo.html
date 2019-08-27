@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let secretNum = Math.floor(Math.random()*100);
+    let dem = 0;
+
+    while(true){
+        if (dem >= 6){
+            alert("You fall");
+            break;}
+        let input = parseInt(prompt("Nhap vao  "));
+        if (input == secretNum){
+            alert( "You win!!!!");
+            break;
+        }
+        if(input<secretNum) {
+            alert("so nay nho hon so bi mat");
+            dem++;
+        }
+        if(input>secretNum){
+            alert("so nay lon hon so bi mat");
+            dem++;
+        }
+    }
+</script>
+</html>
